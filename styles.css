@@ -1,0 +1,240 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5; /* Light gray background */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Navigation Styles */
+header {
+    background: #1e1e1e; /* Dark background for header */
+    color: #f5f5f5; /* Light text color */
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+header.scrolled {
+    background: #333; /* Darker background when scrolled */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 1rem;
+    position: relative;
+}
+
+nav ul li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    position: relative;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ff6f61; /* Coral color underline */
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::before,
+nav ul li a.active::before {
+    width: 100%;
+    left: 0;
+}
+
+/* Hero Section Styles */
+.hero {
+    text-align: center;
+    padding: 6rem 1rem;
+    background: linear-gradient(135deg, #ff6f61 0%, #dce35b 100%); /* Gradient background */
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.hero h1 {
+    margin: 1rem 0;
+    font-size: 3rem;
+    opacity: 0;
+    animation: fadeInUp 2s 0.5s forwards;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: fadeInUp 2s 1s forwards;
+}
+
+/* About Section Styles */
+#about {
+    padding: 4rem 1rem;
+    background: #ffffff; /* White background for About section */
+    color: #333;
+    animation: fadeInUp 2s 1s forwards;
+}
+
+#about h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: #ff6f61; /* Coral color for headings */
+}
+
+#about h2::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #ff6f61;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+#about h2:hover::before {
+    transform: scaleX(1);
+}
+
+#about ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#about ul li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Projects Section Styles */
+#projects {
+    padding: 4rem 1rem;
+    background: #f4f4f4; /* Light gray background */
+}
+
+.project-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-card {
+    background: #ffffff; /* White background for project cards */
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex: 1 1 calc(33% - 1rem);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 2s 1.5s forwards;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Contact Section Styles */
+#contact {
+    padding: 4rem 1rem;
+    background: #ffffff; /* White background for Contact section */
+    color: #333;
+}
+
+#contact p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+#contact a {
+    color: #ff6f61; /* Coral color for links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #dce35b; /* Gradient yellow-green on hover */
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #1e1e1e; /* Dark background for footer */
+    color: #f5f5f5; /* Light text color */
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+}
